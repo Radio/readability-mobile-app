@@ -1,5 +1,5 @@
 angular.module('readability')
-    .config(function($routeProvider) {
+    .config(["$routeProvider", function($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'js/readability/components/reading-list/reading-list.tpl.html',
@@ -12,4 +12,5 @@ angular.module('readability')
             .otherwise({
                 redirectTo: '/'
             });
-    });
+        
+    }]);

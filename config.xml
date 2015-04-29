@@ -24,5 +24,5 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <preference name="Orientation" value="portrait"/>
-    <icon src="img/replica.png" />
+    <icon src="res/replica.png" />
 </widget>

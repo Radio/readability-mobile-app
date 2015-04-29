@@ -1,5 +1,5 @@
 angular.module('readability')
-    .controller('ReadingListController', function($scope) {
+    .controller('ReadingListController', ["$scope", function($scope) {
 
         $scope.list = [{
             title: 'React Is A Terrible Idea',
@@ -17,4 +17,4 @@ angular.module('readability')
             title: 'AngularJS Performance in Large Applications',
             id: 'a5'
         }];
-    });
+    }]);

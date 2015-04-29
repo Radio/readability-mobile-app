@@ -24,7 +24,8 @@ A Readability mobile-app for android.
   Note that grunt watch won't perform ngAnnotate task.
   Always run `grunt build` or at least `grunt ngAnnotate` before building the mobile app with cordva.
 * Build the mobile app with cordova: `cordova build`
-  This will produces the APK files inside android platform (platforms/android/build/outputs/apk).
+  This will produce the application files inside each platform.
+  (For android: platforms/android/build/outputs/apk).
 
 For testing purposes i have a virtual host configured with 'www' folder as a document root.
 Note that the application requires cordova.js file which is missing in 'www'.

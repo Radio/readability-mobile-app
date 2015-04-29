@@ -38,11 +38,17 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+
+        angular.bootstrap(document, ['readability']);
     },
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         console.log('Received Event: ' + id);
     }
 };
-
+if (window.cordova !== undefined) {
+    console.error = function (msg) { alert('Error:' + msg) };
+    console.log = function (msg) { alert('Log:' + msg) };
+}
 app.initialize();

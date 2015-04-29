@@ -6,21 +6,35 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link href="css/mui.min.css" rel="stylesheet" type="text/css" />
+
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link href="css/readability.css" rel="stylesheet" type="text/css" />
 
         <title>Readability</title>
     </head>
-    <body>
-        <div class="app">
-            <div class="mui-container">
-                <div class="mui-panel">
-                    <h1>Readability</h1>
-                    <button class="mui-btn mui-btn-primary mui-btn-raised">My Button</button>
-                </div>
+    <body class="app">
+        <header>
+            <div class="navbar-fixed">
+                <nav>
+                    <div class="nav-wrapper">
+                        <span class="brand-logo">Readability</span>
+                    </div>
+                </nav>
             </div>
-        </div>
+        </header>
+
+        <main class="ctrl-view" data-ng-view></main>
+
         <script src="cordova.js"></script>
-        <script src="js/mui.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular-route.min.js"></script>
+        <script type="text/javascript" src="js/angular-resource.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
         <script src="js/index.js"></script>
+        <script src="js/readability/readability.module.js"></script>
+        <script src="js/readability/readability.routes.js"></script>
+        <script src="js/readability/components/reading-list/reading-list.controller.js"></script>
+        <script src="js/readability/components/article/article.controller.js"></script>
     </body>
 </html>

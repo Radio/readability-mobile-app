@@ -1,0 +1,15 @@
+{
+  "name": "readability",
+  "version": "0.0.1",
+  "author": "Max Gopey <gopeyx@gmail.com>",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-html2js": "~0.2.9",
+    "grunt-ng-annotate": "~0.8.0",
+    "grunt-contrib-copy": "~0.7.0",
+    "load-grunt-tasks": "~2.0.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-less": "~1.0.0"
+  }
+}

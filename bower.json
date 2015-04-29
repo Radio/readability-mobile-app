@@ -1,0 +1,22 @@
+{
+  "name": "readability",
+  "version": "0.0.1",
+  "authors": [
+    "Max Gopey <gopeyx@gmail.com>"
+  ],
+  "main": "www/index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "~0.96.1",
+    "angular": "~1.3.15",
+    "angular-route": "~1.3.15",
+    "angular-resource": "~1.3.15"
+  }
+}

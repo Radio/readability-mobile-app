@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         wwwDir: 'www',
-        srcDir: '<%= wwwDir %>/js',
+        srcDir: 'src',
         vendorDir: 'bower_components',
         vendorFiles: [
             'angular/angular.min.js',
@@ -22,7 +22,9 @@ module.exports = function(grunt) {
             'jquery/dist/jquery.min.map',
             'materialize/dist/js/materialize.min.js',
             'materialize/dist/css/materialize.min.css',
-            'materialize/dist/font/**/*'
+            'materialize/dist/font/**/*',
+            'jsSHA/src/sha1.js',
+            'readability-js-api-client/readability.js'
         ],
 
         /**
@@ -31,10 +33,13 @@ module.exports = function(grunt) {
         html2js: {
             app: {
                 options: {
-                    base: '<%= wwwDir %>/'
+                    base: '<%= srcDir %>',
+                    rename: function(moduleName) {
+                        return 'js/' + moduleName;
+                    }
                 },
                 src: ['<%= srcDir %>/readability/**/*.tpl.html'],
-                dest: '<%= srcDir %>/readability/readability.templates.js',
+                dest: '<%= wwwDir %>/js/readability/readability.templates.js',
                 module: 'readability-templates'
             }
         },
@@ -58,6 +63,14 @@ module.exports = function(grunt) {
         },
 
         copy: {
+            app: {
+                files: [{
+                    src: ['readability/**/*.js'],
+                    dest: '<%= wwwDir %>/js',
+                    cwd: '<%= srcDir %>',
+                    expand: true
+                }]
+            },
             vendor: {
                 files: [{
                     src: ['<%= vendorFiles %>'],
@@ -71,9 +84,9 @@ module.exports = function(grunt) {
         ngAnnotate: {
             app: {
                 files: [{
-                    src: ['readability/**/*.js'],
-                    cwd: '<%= srcDir %>',
-                    dest: '<%= srcDir %>',
+                    src: ['js/readability/**/*.js'],
+                    cwd: '<%= wwwDir %>',
+                    dest: '<%= wwwDir %>',
                     expand: true
                 }]
             }
@@ -105,9 +118,10 @@ module.exports = function(grunt) {
     grunt.initConfig(taskConfig);
 
     grunt.registerTask('build', [
+        'jshint',
+        'copy:app',
         'html2js:app',
         'ngAnnotate',
-        'jshint',
         'copy:vendor'
     ]);
 

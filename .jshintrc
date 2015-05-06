@@ -10,6 +10,7 @@
         "angular": false,
         "confirm": false,
         "moment": false,
-        "window": false
+        "window": false,
+        "Readability": false
     }
 }

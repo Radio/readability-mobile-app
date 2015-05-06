@@ -1,0 +1,6 @@
+<a href="#/login">Login</a>
+<ul class="collection">
+    <li class="collection-item" data-ng-repeat="bookmark in list">
+        <a href="#/article/{{ bookmark.article.id }}">{{ bookmark.article.title }}</a>
+    </li>
+</ul>

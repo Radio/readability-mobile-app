@@ -1,5 +1,17 @@
 angular.module('readability')
-    .factory('Api', function($q) {
+    .value('Consumer', (function() {
+        var credentials =  {
+            key: 'maxgopey',
+            secret: 'kJFVrQrNXna9TYzeHDCcrMhxa3F3nwdC',
+            token: 'cb9a77f7c62f36cd0aec845489e9f24d602eaafd'
+        };
+
+        return new Readability.Consumer(credentials.key, credentials.secret, credentials.token);
+    })())
+    .value('Token', (function() {
+        return new Readability.Token();
+    })())
+    .factory('Api', function($q, Consumer, Token) {
         var Api = Readability;
         Api.Async.getDeferred = function() {
             return $q.defer();
@@ -22,6 +34,17 @@ angular.module('readability')
         }
         // Testing mode end
 
+        return {
+            getReader: function() {
+                return new Api.Reader(Consumer, Token);
+            },
+            getParser: function(){
+                return new Api.Parser(Consumer);
+            },
+            getShortener: function() {
+                return new Api.Shortener();
+            }
+        };
+    })
 
-        return Api;
-    });
+;

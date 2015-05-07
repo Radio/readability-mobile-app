@@ -1,0 +1,156 @@
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+.valign-wrapper {
+  padding-top: 50px;
+}
+.valign-wrapper .preloader-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+header .page-title {
+  margin-left: 20px;
+}
+header nav ul li:hover {
+  background-color: transparent;
+}
+header nav ul li.active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.login-form {
+  padding-top: 10px;
+}
+.reading-list .progress {
+  margin: 0;
+}
+.reading-list .collection {
+  margin-top: 4px;
+  border: 0 none;
+}
+.reading-list .collection.no-margin-top {
+  margin-top: 0;
+}
+.reading-list .collection .collection-item {
+  padding: 0;
+  cursor: pointer;
+}
+.reading-list .collection .collection-item .title-box {
+  padding: 10px 15px;
+}
+.reading-list .collection .collection-item .image-box {
+  padding: 0;
+  line-height: .1em;
+  text-align: right;
+  overflow: hidden;
+  position: relative;
+}
+.reading-list .collection .collection-item .image-box img {
+  max-height: 100px;
+}
+.reading-list .collection .collection-item .image-box .fit-to-height {
+  max-width: none;
+  position: relative;
+}
+.reading-list .collection .collection-item .meta {
+  font-size: 0.857em;
+}
+.reading-list .collection .collection-item .meta .domain {
+  color: #888;
+}
+.reading-list .collection .collection-item .meta .tags {
+  margin-top: 2px;
+}
+.reading-list .collection .collection-item .meta .tags .tag {
+  background: #aaa;
+  color: #fff;
+  border-radius: 2px;
+  margin-right: 5px;
+  padding: 2px 5px;
+}
+.article .actions {
+  font-size: 1.714em;
+  color: #ccc;
+  padding: 10px;
+  line-height: 1em;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+}
+.article .actions a {
+  color: #ccc;
+  margin: 0 5px;
+}
+.article .actions .in-progress {
+  -moz-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+  -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+  animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+.article .actions .active {
+  color: #ffd700;
+}
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+  font-family: Georgia, serif;
+  font-weight: 600;
+  color: #222;
+}
+.article h1 {
+  font-size: 1.857em;
+  margin: 0.46425em 0;
+  line-height: 1.286em;
+}
+.article .meta {
+  margin-bottom: 10px;
+  color: #aaa;
+}
+.article .meta a {
+  color: #888;
+  text-decoration: underline;
+}
+.article .content h2 {
+  font-size: 1.5em;
+  margin: 0.75em 0;
+  line-height: 1.214em;
+}
+.article .content h3 {
+  font-size: 1.286em;
+  margin: 0.643em 0;
+  line-height: 1.286em;
+}
+.article .content h4 {
+  font-size: 1.143em;
+  margin: 0.5715em 0;
+  line-height: 1.286em;
+}
+.article .content h5 {
+  font-size: 1.143em;
+  margin: 0.5715em 0;
+  line-height: 1.286em;
+}
+.article .content h6 {
+  font-size: 1.143em;
+  margin: 0.5715em 0;
+  line-height: 1.286em;
+}
+.article .content ul {
+  margin: 1em 0;
+  padding-left: 20px;
+}
+.article .content ul li {
+  list-style-type: disc;
+  margin-bottom: 5px;
+}
+.article .content ol {
+  padding-left: 20px;
+}
+.article .content ol li {
+  margin-bottom: 5px;
+}

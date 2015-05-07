@@ -18,6 +18,8 @@ module.exports = function(grunt) {
             'angular-resource/angular-resource.min.js.map',
             'angular-route/angular-route.min.js',
             'angular-route/angular-route.min.js.map',
+            'angular-websql/angular-websql.min.js',
+            'ngstorage/ngStorage.min.js',
             'jquery/dist/jquery.min.js',
             'jquery/dist/jquery.min.map',
             'materialize/dist/js/materialize.min.js',
@@ -41,6 +43,17 @@ module.exports = function(grunt) {
                 src: ['<%= srcDir %>/readability/**/*.tpl.html'],
                 dest: '<%= wwwDir %>/js/readability/readability.templates.js',
                 module: 'readability-templates'
+            }
+        },
+
+        less: {
+            app: {
+                options: {
+//                    paths: ["<%= srcDir %>"]
+                },
+                files: {
+                    "<%= wwwDir %>/css/readability.css": "<%= wwwDir %>/less/readability.less"
+                }
             }
         },
 
@@ -100,12 +113,20 @@ module.exports = function(grunt) {
 
             app: {
                 files: ['<%= srcDir %>/readability/**/*.js'],
-                tasks: ['jshint:app'/*, 'ngAnnotate:app'*/]
+                tasks: ['jshint:app', 'copy:app','ngAnnotate:app']
             },
 
             tpls: {
                 files: ['<%= srcDir %>/readability/**/*.tpl.html'],
                 tasks: ['html2js']
+            },
+
+            less: {
+                files: [
+                    '<%= wwwDir %>/less/**/*.less',
+                    '<%= srcDir %>/readability/**/*.less'
+                ],
+                tasks: ['less:app']
             },
 
             vendor: {
@@ -122,6 +143,7 @@ module.exports = function(grunt) {
         'copy:app',
         'html2js:app',
         'ngAnnotate',
+        'less',
         'copy:vendor'
     ]);
 

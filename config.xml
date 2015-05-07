@@ -23,6 +23,7 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <preference name="Orientation" value="portrait"/>
+    <!--<preference name="Orientation" value="portrait"/>-->
     <icon src="res/replica.png" />
+    <splash src="res/replica.png"/>
 </widget>

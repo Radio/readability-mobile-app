@@ -39,12 +39,27 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 
+        document.addEventListener('backbutton', function(e){
+            var exitFrom = [
+                '#check-auth',
+                '#login',
+                '#archive',
+                '#reading-list'
+            ];
+            if($('main').is(exitFrom.join(','))){
+                e.preventDefault();
+                navigator.app.exitApp();
+            } else {
+                navigator.app.backHistory()
+            }
+        }, false);
+
         angular.bootstrap(document, ['readability']);
     },
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        console.log('Received Event: ' + id);
+//        console.log('Received Event: ' + id);
     }
 };
 if (window.cordova !== undefined) {

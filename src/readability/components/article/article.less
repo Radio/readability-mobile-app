@@ -1,0 +1,87 @@
+.article {
+    .actions {
+        font-size: 1.714em;
+        color: #ccc;
+        padding: 10px;
+        line-height: 1em;
+        border-bottom: 1px solid #ccc;
+        overflow: hidden;
+        a {
+            color: #ccc;
+            margin: 0 5px;
+        }
+        .in-progress {
+            -moz-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+            -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+            animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+        }
+        .active {
+            color: #ffd700;
+        }
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: Georgia, serif;
+        font-weight: 600;
+        color: #222;
+    }
+    h1 {
+        @fontSize: 1.857em;
+        font-size: @fontSize;
+        margin: @fontSize / 4 0;
+        line-height: 1.286em;
+    }
+    .meta {
+        margin-bottom: 10px;
+        color: #aaa;
+        a {
+            color: #888;
+            text-decoration: underline;
+        }
+    }
+    .content {
+        h2 {
+            @fontSize: 1.5em;
+            font-size: @fontSize;
+            margin: @fontSize / 2 0;
+            line-height: 1.214em;
+        }
+        h3 {
+            @fontSize: 1.286em;
+            font-size: @fontSize;
+            margin: @fontSize / 2 0;
+            line-height: 1.286em;
+        }
+        h4 {
+            @fontSize: 1.143em;
+            font-size: @fontSize;
+            margin: @fontSize / 2 0;
+            line-height: 1.286em;
+        }
+        h5 {
+            @fontSize: 1.143em;
+            font-size: @fontSize;
+            margin: @fontSize / 2 0;
+            line-height: 1.286em;
+        }
+        h6 {
+            @fontSize: 1.143em;
+            font-size: @fontSize;
+            margin: @fontSize / 2 0;
+            line-height: 1.286em;
+        }
+        ul {
+            margin: 1em 0;
+            padding-left: 20px;
+            li {
+                list-style-type: disc;
+                margin-bottom: 5px;
+            }
+        }
+        ol {
+            padding-left: 20px;
+            li {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

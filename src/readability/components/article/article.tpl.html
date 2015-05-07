@@ -1,7 +1,25 @@
-<div class="container">
-    <h2>{{ article.title }}</h2>
-    <p>Lorem ipsum...</p>
-    <p>
-        <a href="#/">&larr; back</a>
-    </p>
+<div class="article">
+    <div class="actions">
+        <div class="left">
+            <a href="" data-ng-click="goBack()"><i class="mdi-navigation-arrow-back"></i></a>
+        </div>
+        <div class="right">
+            <a href="" data-ng-click="archiveBookmark(bookmark)" data-ng-class="{active: bookmark.archive}">
+                <i class="mdi-action-done"></i>
+            </a>
+            <a href="" data-ng-click="faveBookmark(bookmark)" data-ng-class="{active:bookmark.favorite}">
+                <i class="mdi-action-grade"></i>
+            </a>
+            <!--<a href="" data-ng-click="deleteBookmark(bookmark)"><i class="mdi-action-delete"></i></a>-->
+        </div>
+    </div>
+    <div class="container">
+        <h1>{{ article.title }}</h1>
+        <div class="meta">
+            <span data-ng-if="article.author">By {{ article.author }},</span>
+            <a href="{{ article.url }}" class="domain" data-ng-if="article.domain">{{ article.domain }}</a>
+            <span data-ng-if="article.date_published"><br>{{ article.date_published | date:'mediumDate' }}</span>
+        </div>
+        <div class="content" data-article-content data-article="article"></div>
+    </div>
 </div>

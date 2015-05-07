@@ -1,6 +1,24 @@
-<a href="#/login">Login</a>
-<ul class="collection">
-    <li class="collection-item" data-ng-repeat="bookmark in list">
-        <a href="#/article/{{ bookmark.article.id }}">{{ bookmark.article.title }}</a>
-    </li>
-</ul>
+<div class="reading-list">
+    <div data-ng-show="loading">
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+    <ul class="collection" data-ng-show="list.length" data-ng-class="{'no-margin-top': loading}">
+        <li class="collection-item row bookmark-row"
+            data-ng-repeat="bookmark in list | filter:archiveFilter track by bookmark.id"
+            data-ng-click="readArticle(bookmark)">
+            <div class="col s10 title-box">
+                <span class="black-text">{{ bookmark.article.title }}</span>
+                <div class="meta">
+                    <span class="domain" data-ng-if="bookmark.article.domain">{{ bookmark.article.domain }}</span>
+                    <div class="tags">
+                        <span class="tag" data-ng-repeat="tag in bookmark.tags">{{ tag.text }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col s2 image-box" data-ng-if="bookmark.article.lead_image_url"
+                 data-list-image data-article="bookmark.article"></div>
+        </li>
+    </ul>
+</div>

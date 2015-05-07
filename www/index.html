@@ -12,18 +12,23 @@
 
         <title>Readability</title>
     </head>
-    <body class="app">
-        <header>
-            <div class="navbar-fixed">
+    <body class="app" data-page>
+        <header data-ng-if="page.showHeader" data-ng-cloak>
+            <!--<div class="navbar-fixed">-->
                 <nav>
                     <div class="nav-wrapper">
-                        <span class="brand-logo">Readability</span>
+                        <span class="page-title">{{ page.title }}</span>
+                        <ul class="right" data-ng-show="page.actions.length">
+                            <li data-ng-repeat="action in page.actions" data-nav-action="action">
+                                <!--<a href="" data-ng-click="action.handler()"><i class="{{ action.icon }}"></i></a>-->
+                            </li>
+                        </ul>
                     </div>
                 </nav>
-            </div>
+            <!--</div>-->
         </header>
 
-        <main class="ctrl-view" data-ng-view></main>
+        <main class="ctrl-view" id="{{ page.id }}" data-ng-view></main>
 
         <script src="cordova.js"></script>
 
@@ -32,6 +37,7 @@
         <script type="text/javascript" src="vendor/angular-route/angular-route.min.js"></script>
         <script type="text/javascript" src="vendor/angular-resource/angular-resource.min.js"></script>
         <script type="text/javascript" src="vendor/angular-websql/angular-websql.min.js"></script>
+        <script type="text/javascript" src="vendor/ngstorage/ngStorage.min.js"></script>
         <script type="text/javascript" src="vendor/materialize/dist/js/materialize.min.js"></script>
         <script type="text/javascript" src="vendor/jsSHA/src/sha1.js"></script>
         <script type="text/javascript" src="vendor/readability-js-api-client/readability.dev.js"></script>
@@ -41,10 +47,20 @@
         <script src="js/readability/readability.module.js"></script>
         <script src="js/readability/readability.routes.js"></script>
         <script src="js/readability/readability.templates.js"></script>
-        <script src="js/readability/shared/consumer/consumerServices.js"></script>
-        <script src="js/readability/shared/api/apiServices.js"></script>
+        <script src="js/readability/shared/consumer/consumer.services.js"></script>
+        <script src="js/readability/shared/api/api.services.js"></script>
+        <script src="js/readability/shared/page/page.services.js"></script>
+        <script src="js/readability/shared/page/page.directive.js"></script>
+        <script src="js/readability/shared/page/nav-action.directive.js"></script>
+        <script src="js/readability/shared/page/loading-indicator.directive.js"></script>
+        <script src="js/readability/shared/storage/storage.services.js"></script>
+        <script src="js/readability/shared/state/state.services.js"></script>
+        <script src="js/readability/components/check-auth/check-auth.controller.js"></script>
         <script src="js/readability/components/login/login.controller.js"></script>
         <script src="js/readability/components/reading-list/reading-list.controller.js"></script>
+        <script src="js/readability/components/reading-list/archive.controller.js"></script>
+        <script src="js/readability/components/reading-list/list-image.directive.js"></script>
         <script src="js/readability/components/article/article.controller.js"></script>
+        <script src="js/readability/components/article/article-content.directive.js"></script>
     </body>
 </html>

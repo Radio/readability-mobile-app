@@ -1,0 +1,54 @@
+.reading-list {
+    .progress {
+        margin: 0;
+    }
+    .collection {
+        margin-top: 4px;
+        border: 0 none;
+
+        &.no-margin-top {
+            margin-top: 0;
+        }
+
+        .collection-item {
+            padding: 0;
+            cursor: pointer;
+
+            .title-box {
+                padding: 10px 15px;
+            }
+            .image-box {
+                padding: 0;
+                line-height: .1em;
+                text-align: right;
+                overflow: hidden;
+                position: relative;
+                img {
+                    max-height: 100px;
+                }
+
+                .fit-to-height {
+                    max-width: none;
+                    position: relative;
+                }
+            }
+            .meta {
+                font-size: 0.857em;
+                .domain {
+                    color: #888;
+                }
+                .tags {
+                    margin-top: 2px;
+
+                    .tag {
+                        background: #aaa;
+                        color: #fff;
+                        border-radius: 2px;
+                        margin-right: 5px;
+                        padding: 2px 5px;
+                    }
+                }
+            }
+        }
+    }
+}

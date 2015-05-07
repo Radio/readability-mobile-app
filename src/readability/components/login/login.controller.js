@@ -1,33 +1,41 @@
 angular.module('readability')
-    .controller('LoginController', function($scope, Consumer, Api) {
+    .controller('LoginController', function($scope, $localStorage, $location, Api, Token, Page) {
+
+        Page.id = 'login';
+        Page.showHeader = true;
+        Page.title = 'Login';
 
         $scope.authorize = authorize;
 
-        $scope.state = 'Not Authorized';
+        var client = Api.getReader();
 
         function authorize(username, password)
         {
+            $scope.loading = true;
             try {
-                var client = new Api.Reader(
-                    new Api.Consumer(Consumer.key, Consumer.secret)
-                );
-                client.apiUrl = 'http://readability.me/readability-js-api-client/test/api-proxy.php';
+                Token.setValue('');
+                Token.setSecret('');
                 client.authorize(username, password)
                     .then(function(token) {
-                        console.info('Authorized');
-                        console.log('Token' + token.getValue());
-                        console.log('Secret' + token.getSecret());
-
-                        $scope.state = 'Authorized with token: ' + token.getValue();
+                        $localStorage.token = {
+                            value: token.getValue(),
+                            secret: token.getSecret()
+                        };
+                        $scope.loading = false;
+                        redirectAfterLogin();
                     }, function(response) {
-                        console.error('AUTH ERROR');
-                        console.log(response);
-
-                        $scope.state = 'Authorization failed';
+                        $scope.loading = false;
+                        delete $localStorage.token;
                     });
             } catch (e) {
-                console.error('EXCEPTION');
+                $scope.loading = false;
                 console.log(e);
+                delete $localStorage.token;
             }
+        }
+
+        function redirectAfterLogin()
+        {
+            $location.path('/reading-list');
         }
     });

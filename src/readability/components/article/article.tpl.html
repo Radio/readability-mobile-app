@@ -1,15 +1,15 @@
 <div class="article">
     <div class="actions">
         <div class="left">
-            <a href="" data-ng-click="goBack()"><i class="mdi-navigation-arrow-back"></i></a>
+            <a href="" data-article-action data-ng-click="goBack()"><i class="mdi-navigation-arrow-back"></i></a>
         </div>
         <div class="right">
-            <a href="" data-ng-click="archiveBookmark(bookmark)" data-ng-class="{active: bookmark.archive}">
-                <i class="mdi-action-done"></i>
-            </a>
-            <a href="" data-ng-click="faveBookmark(bookmark)" data-ng-class="{active:bookmark.favorite}">
-                <i class="mdi-action-grade"></i>
-            </a>
+            <a href="" data-article-action data-ng-click="archiveBookmark(bookmark)"
+               data-ng-class="{archived: bookmark.archive}">
+                <i class="mdi-action-done"></i></a>
+            <a href="" data-article-action data-ng-click="faveBookmark(bookmark)"
+               data-ng-class="{favorited:bookmark.favorite}">
+                <i class="mdi-action-grade"></i></a>
             <!--<a href="" data-ng-click="deleteBookmark(bookmark)"><i class="mdi-action-delete"></i></a>-->
         </div>
     </div>

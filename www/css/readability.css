@@ -22,50 +22,52 @@ header nav ul li:hover {
 header nav ul li.active {
   background-color: rgba(0, 0, 0, 0.1);
 }
+main .loading-list .progress {
+  margin: 0;
+}
+main .loading-list .collection {
+  margin-top: 4px;
+  border-top: 0 none;
+  border-left: 0 none;
+  border-right: 0 none;
+}
+main .loading-list .collection.no-margin-top {
+  margin-top: 0;
+}
 .login-form {
   padding-top: 10px;
 }
-.reading-list .progress {
-  margin: 0;
-}
-.reading-list .collection {
-  margin-top: 4px;
-  border: 0 none;
-}
-.reading-list .collection.no-margin-top {
-  margin-top: 0;
-}
-.reading-list .collection .collection-item {
+.bookmarks-list .collection .collection-item {
   padding: 0;
   cursor: pointer;
 }
-.reading-list .collection .collection-item .title-box {
+.bookmarks-list .collection .collection-item .title-box {
   padding: 10px 15px;
 }
-.reading-list .collection .collection-item .image-box {
+.bookmarks-list .collection .collection-item .image-box {
   padding: 0;
   line-height: .1em;
   text-align: right;
   overflow: hidden;
   position: relative;
 }
-.reading-list .collection .collection-item .image-box img {
+.bookmarks-list .collection .collection-item .image-box img {
   max-height: 100px;
 }
-.reading-list .collection .collection-item .image-box .fit-to-height {
+.bookmarks-list .collection .collection-item .image-box .fit-to-height {
   max-width: none;
   position: relative;
 }
-.reading-list .collection .collection-item .meta {
+.bookmarks-list .collection .collection-item .meta {
   font-size: 0.857em;
 }
-.reading-list .collection .collection-item .meta .domain {
+.bookmarks-list .collection .collection-item .meta .domain {
   color: #888;
 }
-.reading-list .collection .collection-item .meta .tags {
+.bookmarks-list .collection .collection-item .meta .tags {
   margin-top: 2px;
 }
-.reading-list .collection .collection-item .meta .tags .tag {
+.bookmarks-list .collection .collection-item .meta .tags .tag {
   background: #aaa;
   color: #fff;
   border-radius: 2px;

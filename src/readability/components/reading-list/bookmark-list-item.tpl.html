@@ -1,0 +1,14 @@
+<div data-ng-click="readArticle(bookmark)">
+    <div class="col s10 title-box">
+        <span class="black-text">{{ bookmark.article.title }}</span>
+        <div class="meta">
+            <span class="domain" data-ng-if="bookmark.article.domain">{{ bookmark.article.domain }}</span>
+            <div class="tags">
+                <span class="tag" data-ng-repeat="tag in bookmark.tags">{{ tag.text }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="col s2 image-box" data-ng-if="bookmark.article.lead_image_url">
+        <img src="" alt="" class="responsive-img" data-ng-src="{{ bookmark.article.lead_image_url }}"/>
+     </div>
+</div>

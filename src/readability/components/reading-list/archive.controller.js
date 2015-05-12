@@ -7,10 +7,16 @@ angular.module('readability')
         Page.showHeader = true;
         Page.title = 'Archive';
         Page.actions = [{
+            title: 'Tags',
+            icon: 'mdi-action-label-outline',
+            handler: function() {
+                $location.path('/tags');
+            }
+        }, {
             title: 'Reading List',
             icon: 'mdi-action-list',
             handler: function() {
-                $location.path('#/reading-list');
+                $location.path('/reading-list');
             }
         }, {
             title: 'Refresh',
@@ -19,17 +25,15 @@ angular.module('readability')
                 reloadArchive();
             }
         }];
+        State.lastList = Page.id;
 
         $scope.list = [];
         $scope.archiveFilter = { archive: true };
-        $scope.readArticle = function(bookmark) {
-            $location.path('/article/' + bookmark.id);
-        };
 
         if (Storage.archive.get()) {
-            $scope.list = Storage.archive.get();
+            $scope.list = Storage.archive.get() || [];
         }
-        if (!$scope.list || State.archiveRefreshRequired) {
+        if (!$scope.list.length || State.archiveRefreshRequired) {
             reloadArchive();
             State.archiveRefreshRequired = false;
         }
@@ -47,6 +51,7 @@ angular.module('readability')
             };
             return client.getBookmarks(parameters).then(function(response) {
                 $scope.list = response.bookmarks;
+                $scope.list.isEmpty = !$scope.list.length;
                 $scope.loading = false;
                 return response;
             }, function(response) {

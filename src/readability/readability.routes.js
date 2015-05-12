@@ -53,6 +53,20 @@ angular.module('readability')
                     'UserInfo': getUserInfo
                 }
             })
+            .when('/tags', {
+                templateUrl: 'js/readability/components/tags/tags.tpl.html',
+                controller: 'TagsController',
+                resolve: {
+                    'UserInfo': getUserInfo
+                }
+            })
+            .when('/tagged/:tag', {
+                templateUrl: 'js/readability/components/tags/tagged.tpl.html',
+                controller: 'TaggedController',
+                resolve: {
+                    'UserInfo': getUserInfo
+                }
+            })
             .when('/article/:articleId', {
                 templateUrl: 'js/readability/components/article/article.tpl.html',
                 controller: 'ArticleController',

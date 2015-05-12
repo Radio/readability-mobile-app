@@ -1,0 +1,31 @@
+<div class="loading-list bookmarks-list tagged">
+    <div data-ng-show="loading">
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+    <ul class="collection" data-ng-show="list.length" data-ng-class="{'no-margin-top': loading}">
+        <li class="collection-item row bookmark-row"
+            data-ng-repeat="bookmark in list track by bookmark.id"
+            data-bookmark-list-item>
+        </li>
+    </ul>
+    <p class="center-align"
+       data-ng-show="list.isEmpty">No active bookmarks tagged with &lsquo;{{tag}}&rsquo; are found.</p>
+    <div class="archived">
+        <div class="row" data-ng-hide="loading || archive.isEmpty">
+            <div class="col s12 center-align">
+                <p>Archived bookmarks are not loaded.</p>
+                <a class="waves-effect waves-light btn" href="" data-ng-click="loadArchived()">Load</a>
+            </div>
+        </div>
+        <ul class="collection" data-ng-show="archive.length">
+            <li class="collection-item row bookmark-row"
+                data-ng-repeat="bookmark in archive track by bookmark.id"
+                data-bookmark-list-item>
+            </li>
+        </ul>
+        <p class="center-align"
+           data-ng-show="archive.isEmpty">No archived bookmarks tagged with &lsquo;{{tag}}&rsquo; are found.</p>
+    </div>
+</div>

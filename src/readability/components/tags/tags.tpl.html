@@ -1,0 +1,14 @@
+<div class="loading-list tags">
+    <div data-ng-show="loading">
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+    <ul class="collection" data-ng-show="list.length" data-ng-class="{'no-margin-top': loading}">
+        <li class="collection-item row tag-row"
+            data-ng-repeat="tag in list track by tag.id"
+            data-ng-click="viewTagged(tag)">
+            <span class="black-text">{{ tag.text }}</span>
+        </li>
+    </ul>
+</div>

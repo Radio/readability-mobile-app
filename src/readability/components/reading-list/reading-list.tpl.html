@@ -1,4 +1,4 @@
-<div class="reading-list">
+<div class="loading-list bookmarks-list reading-list">
     <div data-ng-show="loading">
         <div class="progress">
             <div class="indeterminate"></div>
@@ -7,18 +7,9 @@
     <ul class="collection" data-ng-show="list.length" data-ng-class="{'no-margin-top': loading}">
         <li class="collection-item row bookmark-row"
             data-ng-repeat="bookmark in list | filter:archiveFilter track by bookmark.id"
-            data-ng-click="readArticle(bookmark)">
-            <div class="col s10 title-box">
-                <span class="black-text">{{ bookmark.article.title }}</span>
-                <div class="meta">
-                    <span class="domain" data-ng-if="bookmark.article.domain">{{ bookmark.article.domain }}</span>
-                    <div class="tags">
-                        <span class="tag" data-ng-repeat="tag in bookmark.tags">{{ tag.text }}</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col s2 image-box" data-ng-if="bookmark.article.lead_image_url"
-                 data-list-image data-article="bookmark.article"></div>
+            data-bookmark-list-item>
         </li>
     </ul>
+    <p class="center-align"
+       data-ng-show="!loading && list.isEmpty">No bookmarks found.</p>
 </div>

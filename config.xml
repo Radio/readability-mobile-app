@@ -23,7 +23,13 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <!--<preference name="Orientation" value="portrait"/>-->
-    <icon src="res/replica.png" />
-    <splash src="res/replica.png"/>
+    <platform name="android">
+        <icon src="res/android/mdpi.png" density="mdpi" />
+        <icon src="res/android/hdpi.png" density="hdpi" />
+        <icon src="res/android/xhdpi.png" density="xhdpi" />
+
+        <splash src="res/android/xhdpi.png" density="port-mdpi"/>
+        <splash src="res/android/xxhdpi.png" density="port-hdpi"/>
+        <splash src="res/android/xxxhdpi.png" density="port-xhdpi"/>
+    </platform>
 </widget>

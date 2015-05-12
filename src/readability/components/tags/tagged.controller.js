@@ -5,7 +5,7 @@ angular.module('readability')
         var tag = $routeParams.tag;
 
         State.lastList = 'tagged/' + tag;
-        Page.id = 'tagged-' + tag;
+        Page.id = 'tagged';
         Page.showHeader = true;
         Page.title = tag;
         Page.actions = [{

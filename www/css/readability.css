@@ -165,3 +165,9 @@ main .loading-list .collection.no-margin-top {
 .article .content ol li {
   margin-bottom: 5px;
 }
+#tagged-header .page-title {
+  max-width: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

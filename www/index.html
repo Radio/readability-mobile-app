@@ -13,11 +13,11 @@
         <title>Readability</title>
     </head>
     <body class="app" data-page>
-        <header data-ng-if="page.showHeader" data-ng-cloak>
+        <header id="{{ page.id }}-header" data-ng-if="page.showHeader" data-ng-cloak>
             <!--<div class="navbar-fixed">-->
                 <nav>
                     <div class="nav-wrapper">
-                        <span class="page-title">{{ page.title }}</span>
+                        <span class="left page-title">{{ page.title }}</span>
                         <ul class="right" data-ng-show="page.actions.length">
                             <li data-ng-repeat="action in page.actions" data-nav-action="action">
                                 <!--<a href="" data-ng-click="action.handler()"><i class="{{ action.icon }}"></i></a>-->
